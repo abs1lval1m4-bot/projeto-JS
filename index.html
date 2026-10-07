@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Atividade JavaScript - SENAI</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #eef1f5;
+            color: #222;
+        }
+
+        header {
+            background-color: #c71919;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 16px;
+        }
+
+        main {
+            width: 92%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .introducao {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .introducao h2 {
+            color: #c71919;
+            margin-bottom: 10px;
+        }
+
+        .exercicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #c71919;
+        }
+
+        .card h3 {
+            color: #c71919;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 11px;
+            background-color: #c71919;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #a91414;
+        }
+
+        .resultado {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #f1f3f5;
+            border-radius: 6px;
+            min-height: 20px;
+            font-weight: bold;
+        }
+
+        .urgente {
+            background-color: #ffe5e5;
+            color: #c00000;
+        }
+
+        .sucesso {
+            background-color: #e5f7e8;
+            color: #217a2b;
+        }
+
+        footer {
+            margin-top: 40px;
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>💻 Atividade de JavaScript</h1>
+        <p>Situação de Aprendizagem - Programação Front End</p>
+    </header>
+
+
+    <main>
+
+        <section class="introducao">
+            <h2>Exercícios de JavaScript</h2>
+
+            <p>
+                Projeto desenvolvido para praticar variáveis,
+                operadores, condições e funções em JavaScript.
+            </p>
+        </section>
+
+
+        <section class="exercicios">
+
+
+
+            <div class="card">
+
+                <h3>1. Conversor de Moeda</h3>
+
+                <p>
+                    Converte Dólar para Real usando a cotação
+                    fixa de US$ 1 = R$ 5,00.
+                </p>
+
+                <input
+                    type="number"
+                    id="dolar"
+                    placeholder="Valor em dólares"
+                    min="0"
+                >
+
+                <button onclick="converterMoeda()">
+                    Converter
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoMoeda"
+                ></div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>2. Área do Retângulo</h3>
+
+                <p>
+                    Calcula a área usando base × altura.
+                </p>
+
+                <input
+                    type="number"
+                    id="base"
+                    placeholder="Base"
+                    min="0"
+                >
+
+                <input
+                    type="number"
+                    id="altura"
+                    placeholder="Altura"
+                    min="0"
+                >
+
+                <button onclick="calcularArea()">
+                    Calcular Área
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoArea"
+                ></div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>3. Dobro e Metade</h3>
+
+                <p>
+                    Recebe um número e mostra seu dobro
+                    e sua metade.
+                </p>
+
+                <input
+                    type="number"
+                    id="numeroDobro"
+                    placeholder="Digite um número"
+                >
+
+                <button onclick="dobroEMetade()">
+                    Calcular
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoDobro"
+                ></div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>4. Calculadora de Idade</h3>
+
+                <p>
+                    Calcula a idade através do ano de nascimento
+                    e do ano atual.
+                </p>
+
+                <input
+                    type="number"
+                    id="nascimento"
+                    placeholder="Ano de nascimento"
+                >
+
+                <input
+                    type="number"
+                    id="anoAtual"
+                    placeholder="Ano atual"
+                >
+
+                <button onclick="calcularIdade()">
+                    Calcular Idade
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoIdade"
+                ></div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>5. Gorjeta do Garçom</h3>
+
+                <p>
+                    Calcula 10% de gorjeta sobre o valor
+                    da conta e mostra o total.
+                </p>
+
+                <input
+                    type="number"
+                    id="conta"
+                    placeholder="Valor da conta"
+                    min="0"
+                    step="0.01"
+                >
+
+                <button onclick="calcularGorjeta()">
+                    Calcular
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoGorjeta"
+                ></div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>6. Par ou Ímpar</h3>
+
+                <p>
+                    Verifica se um número inteiro é
+                    par ou ímpar.
+                </p>
+
+                <input
+                    type="number"
+                    id="numeroPar"
+                    placeholder="Digite um número"
+                >
+
+                <button onclick="verificarPar()">
+                    Verificar
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoPar"
+                ></div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>7. Maioridade</h3>
+
+                <p>
+                    Verifica se a pessoa possui 18 anos
+                    ou mais.
+                </p>
+
+                <input
+                    type="number"
+                    id="idadeMaioridade"
+                    placeholder="Digite a idade"
+                    min="0"
+                >
+
+                <button onclick="verificarMaioridade()">
+                    Verificar
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoMaioridade"
+                ></div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>8. Login Simples</h3>
+
+                <p>
+                    A senha correta é definida como
+                    "1234".
+                </p>
+
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Digite a senha"
+                >
+
+                <button onclick="verificarSenha()">
+                    Entrar
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoLogin"
+                ></div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>9. Comparar Números</h3>
+
+                <p>
+                    Compara dois números e informa
+                    qual é maior ou se são iguais.
+                </p>
+
+                <input
+                    type="number"
+                    id="numero1"
+                    placeholder="Primeiro número"
+                >
+
+                <input
+                    type="number"
+                    id="numero2"
+                    placeholder="Segundo número"
+                >
+
+                <button onclick="compararNumeros()">
+                    Comparar
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoComparacao"
+                ></div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>10. Desconto Progressivo</h3>
+
+                <p>
+                    Compras acima de R$ 100,00 recebem
+                    10% de desconto.
+                </p>
+
+                <input
+                    type="number"
+                    id="compra"
+                    placeholder="Valor da compra"
+                    min="0"
+                    step="0.01"
+                >
+
+                <button onclick="calcularDesconto()">
+                    Calcular
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoDesconto"
+                ></div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>11. Calculadora de IMC</h3>
+
+                <p>
+                    Calcula o IMC usando peso e altura
+                    para fins didáticos.
+                </p>
+
+                <input
+                    type="number"
+                    id="peso"
+                    placeholder="Peso em kg"
+                    min="0"
+                    step="0.1"
+                >
+
+                <input
+                    type="number"
+                    id="alturaImc"
+                    placeholder="Altura em metros"
+                    min="0"
+                    step="0.01"
+                >
+
+                <button onclick="calcularIMC()">
+                    Calcular IMC
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoIMC"
+                ></div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>12. Verificador de Triângulo</h3>
+
+                <p>
+                    Verifica se o triângulo é Equilátero,
+                    Isósceles ou Escaleno.
+                </p>
+
+                <input
+                    type="number"
+                    id="lado1"
+                    placeholder="Lado 1"
+                    min="0"
+                >
+
+                <input
+                    type="number"
+                    id="lado2"
+                    placeholder="Lado 2"
+                    min="0"
+                >
+
+                <input
+                    type="number"
+                    id="lado3"
+                    placeholder="Lado 3"
+                    min="0"
+                >
+
+                <button onclick="verificarTriangulo()">
+                    Verificar
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoTriangulo"
+                ></div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>13. Classificação de Atleta</h3>
+
+                <p>
+                    Classifica o atleta de acordo com
+                    a faixa etária solicitada.
+                </p>
+
+                <input
+                    type="number"
+                    id="idadeAtleta"
+                    placeholder="Idade"
+                    min="0"
+                >
+
+                <button onclick="classificarAtleta()">
+                    Classificar
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoAtleta"
+                ></div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>14. Positivo, Negativo ou Zero</h3>
+
+                <p>
+                    Identifica se um número é positivo,
+                    negativo ou exatamente zero.
+                </p>
+
+                <input
+                    type="number"
+                    id="numeroSinal"
+                    placeholder="Digite um número"
+                >
+
+                <button onclick="verificarSinal()">
+                    Verificar
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoSinal"
+                ></div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>15. Conversor de Temperatura</h3>
+
+                <p>
+                    Converte Celsius para Fahrenheit.
+                    Acima de 100°F gera um alerta.
+                </p>
+
+                <input
+                    type="number"
+                    id="celsius"
+                    placeholder="Temperatura em Celsius"
+                    step="0.1"
+                >
+
+                <button onclick="converterTemperatura()">
+                    Converter
+                </button>
+
+                <div
+                    class="resultado"
+                    id="resultadoTemperatura"
+                ></div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        Atividade de Programação Front End - JavaScript
+    </footer>
+
+
+    <script>
+
+
+
+        function converterMoeda() {
+
+            const dolar =
+                Number(document.getElementById("dolar").value);
+
+            const cotacao = 5;
+
+            const reais = dolar * cotacao;
+
+            document.getElementById("resultadoMoeda").textContent =
+                "US$ " + dolar.toFixed(2) +
+                " = R$ " + reais.toFixed(2);
+
+        }
+
+
+
+        function calcularArea() {
+
+            const base =
+                Number(document.getElementById("base").value);
+
+            const altura =
+                Number(document.getElementById("altura").value);
+
+            const area = base * altura;
+
+            document.getElementById("resultadoArea").textContent =
+                "Área do retângulo: " + area.toFixed(2);
+
+        }
+
+
+
+        function dobroEMetade() {
+
+            const numero =
+                Number(document.getElementById("numeroDobro").value);
+
+            const dobro = numero * 2;
+
+            const metade = numero / 2;
+
+            document.getElementById("resultadoDobro").textContent =
+                "Dobro: " + dobro +
+                " | Metade: " + metade;
+
+            console.log("Dobro:", dobro);
+            console.log("Metade:", metade);
+
+        }
+
+
+
+        function calcularIdade() {
+
+            const nascimento =
+                Number(document.getElementById("nascimento").value);
+
+            const anoAtual =
+                Number(document.getElementById("anoAtual").value);
+
+            const idade = anoAtual - nascimento;
+
+            document.getElementById("resultadoIdade").textContent =
+                "Idade: " + idade + " anos";
+
+        }
+
+
+
+        function calcularGorjeta() {
+
+            const conta =
+                Number(document.getElementById("conta").value);
+
+            const gorjeta = conta * 0.10;
+
+            const total = conta + gorjeta;
+
+            document.getElementById("resultadoGorjeta").textContent =
+                "Gorjeta: R$ " + gorjeta.toFixed(2) +
+                " | Total: R$ " + total.toFixed(2);
+
+        }
+
+
+
+        function verificarPar() {
+
+            const numero =
+                Number(document.getElementById("numeroPar").value);
+
+            let resultado;
+
+            if (numero % 2 === 0) {
+
+                resultado = "O número é PAR.";
+
+            } else {
+
+                resultado = "O número é ÍMPAR.";
+
+            }
+
+            document.getElementById("resultadoPar").textContent =
+                resultado;
+
+        }
+
+
+
+        function verificarMaioridade() {
+
+            const idade =
+                Number(
+                    document.getElementById(
+                        "idadeMaioridade"
+                    ).value
+                );
+
+            let resultado;
+
+            if (idade >= 18) {
+
+                resultado = "A pessoa é maior de idade.";
+
+            } else {
+
+                resultado = "A pessoa é menor de idade.";
+
+            }
+
+            document.getElementById(
+                "resultadoMaioridade"
+            ).textContent = resultado;
+
+        }
+
+
+
+        function verificarSenha() {
+
+            const senhaCorreta = "1234";
+
+            const senha =
+                document.getElementById("senha").value;
+
+            let resultado;
+
+            if (senha === senhaCorreta) {
+
+                resultado = "Acesso permitido!";
+
+            } else {
+
+                resultado = "Negado.";
+
+            }
+
+            document.getElementById(
+                "resultadoLogin"
+            ).textContent = resultado;
+
+        }
+
+
+
+        function compararNumeros() {
+
+            const numero1 =
+                Number(document.getElementById("numero1").value);
+
+            const numero2 =
+                Number(document.getElementById("numero2").value);
+
+            let resultado;
+
+            if (numero1 > numero2) {
+
+                resultado = numero1 + " é maior.";
+
+            } else if (numero2 > numero1) {
+
+                resultado = numero2 + " é maior.";
+
+            } else {
+
+                resultado = "Os dois números são iguais.";
+
+            }
+
+            document.getElementById(
+                "resultadoComparacao"
+            ).textContent = resultado;
+
+        }
+
+
+
+        function calcularDesconto() {
+
+            const compra =
+                Number(document.getElementById("compra").value);
+
+            let valorFinal;
+
+            if (compra > 100) {
+
+                const desconto = compra * 0.10;
+
+                valorFinal = compra - desconto;
+
+                document.getElementById(
+                    "resultadoDesconto"
+                ).textContent =
+                    "Desconto de 10%. Valor final: R$ " +
+                    valorFinal.toFixed(2);
+
+            } else {
+
+                valorFinal = compra;
+
+                document.getElementById(
+                    "resultadoDesconto"
+                ).textContent =
+                    "Preço normal: R$ " +
+                    valorFinal.toFixed(2);
+
+            }
+
+        }
+
+
+
+        function calcularIMC() {
+
+            const peso =
+                Number(document.getElementById("peso").value);
+
+            const altura =
+                Number(document.getElementById("alturaImc").value);
+
+            if (peso <= 0 || altura <= 0) {
+
+                document.getElementById(
+                    "resultadoIMC"
+                ).textContent =
+                    "Digite valores válidos.";
+
+                return;
+            }
+
+            const imc = peso / (altura * altura);
+
+            let classificacao;
+
+            if (imc < 18.5) {
+
+                classificacao = "Abaixo";
+
+            } else if (imc < 25) {
+
+                classificacao = "Normal";
+
+            } else {
+
+                classificacao = "Acima";
+
+            }
+
+            document.getElementById(
+                "resultadoIMC"
+            ).textContent =
+                "IMC: " + imc.toFixed(2) +
+                " | Classificação: " + classificacao;
+
+        }
+
+
+
+        function verificarTriangulo() {
+
+            const lado1 =
+                Number(document.getElementById("lado1").value);
+
+            const lado2 =
+                Number(document.getElementById("lado2").value);
+
+            const lado3 =
+                Number(document.getElementById("lado3").value);
+
+            let resultado;
+
+
+
+            if (
+                lado1 + lado2 <= lado3 ||
+                lado1 + lado3 <= lado2 ||
+                lado2 + lado3 <= lado1
+            ) {
+
+                resultado = "Os lados não formam um triângulo.";
+
+            }
+
+            else if (
+                lado1 === lado2 &&
+                lado2 === lado3
+            ) {
+
+                resultado = "Triângulo Equilátero.";
+
+            }
+
+            else if (
+                lado1 === lado2 ||
+                lado1 === lado3 ||
+                lado2 === lado3
+            ) {
+
+                resultado = "Triângulo Isósceles.";
+
+            }
+
+            else {
+
+                resultado = "Triângulo Escaleno.";
+
+            }
+
+
+            document.getElementById(
+                "resultadoTriangulo"
+            ).textContent = resultado;
+
+        }
+
+
+
+        function classificarAtleta() {
+
+            const idade =
+                Number(document.getElementById("idadeAtleta").value);
+
+            let resultado;
+
+
+            if (idade >= 5 && idade <= 7) {
+
+                resultado = "Infantil A";
+
+            }
+
+            else if (idade >= 8 && idade <= 10) {
+
+                resultado = "Infantil B";
+
+            }
+
+            else if (idade >= 11 && idade <= 17) {
+
+                resultado = "Juvenil";
+
+            }
+
+            else if (idade >= 18) {
+
+                resultado = "Adulto";
+
+            }
+
+            else {
+
+                resultado = "Idade fora das categorias.";
+
+            }
+
+
+            document.getElementById(
+                "resultadoAtleta"
+            ).textContent = resultado;
+
+        }
+
+
+
+        function verificarSinal() {
+
+            const numero =
+                Number(
+                    document.getElementById(
+                        "numeroSinal"
+                    ).value
+                );
+
+            let resultado;
+
+
+            if (numero > 0) {
+
+                resultado = "O número é POSITIVO.";
+
+            }
+
+            else if (numero < 0) {
+
+                resultado = "O número é NEGATIVO.";
+
+            }
+
+            else {
+
+                resultado = "O número é exatamente ZERO.";
+
+            }
+
+
+            document.getElementById(
+                "resultadoSinal"
+            ).textContent = resultado;
+
+        }
+
+
+
+        function converterTemperatura() {
+
+            const celsius =
+                Number(
+                    document.getElementById(
+                        "celsius"
+                    ).value
+                );
+
+
+
+            const fahrenheit =
+                (celsius * 9 / 5) + 32;
+
+
+            let resultado =
+                fahrenheit.toFixed(2) +
+                " °F";
+
+
+            if (fahrenheit > 100) {
+
+                resultado +=
+                    " | ⚠️ Clima muito quente!";
+
+            }
+
+
+            document.getElementById(
+                "resultadoTemperatura"
+            ).textContent = resultado;
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
